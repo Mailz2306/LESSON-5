@@ -77,7 +77,7 @@ void PrintArray(int[] arr)
 }
 
 ДОМАШНЕЕ ЗАДАНИЕ 
-*/ 
+
 
 Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
 [345, 897, 568, 234] -> 2
@@ -90,3 +90,30 @@ _____________________________
 
 ЗАДАЧА 34: РЕШЕНИЕ
 
+*/
+Console.Write("Задайте длину массива: ");
+int a = int.Parse(Console.ReadLine());
+int[] randomArray = new int[a];
+
+void array(int a)
+{
+    for (int i = 0; i < a; i++)
+    {
+        randomArray[i] = new Random().Next(99, 999);
+        Console.Write(randomArray[i] + " ");
+    }
+}
+
+int amount(int[] randomArray)
+{
+    int amount = 0;
+    for (int i = 0; i < randomArray.Length; i++)
+    {
+        if (randomArray[i] % 2 == 0)
+            amount = amount + 1;
+    }
+    return amount;
+}
+
+array(a);
+Console.Write($"\nЧётных чисел в массиве: { amount(randomArray)}");
