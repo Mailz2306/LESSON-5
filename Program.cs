@@ -90,7 +90,6 @@ _____________________________
 
 ЗАДАЧА 34: РЕШЕНИЕ
 
-*/
 Console.Write("Задайте длину массива: ");
 int a = int.Parse(Console.ReadLine());
 int[] randomArray = new int[a];
@@ -116,4 +115,48 @@ int amount(int[] randomArray)
 }
 
 array(a);
-Console.Write($"\nЧётных чисел в массиве: { amount(randomArray)}");
+Console.Write($"\nЧётных чисел в массиве: { amount(randomArray)}"); 
+____________________
+
+ЗАДАЧА 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
+РЕШЕНИЕ
+
+Console.Write("Задайте длину массива: ");
+int a = int.Parse(Console.ReadLine());
+int[] randomArray = new int[a];
+
+void array(int a)
+{
+    for (int i = 0; i < a; i++)
+    {
+        randomArray[i] = new Random().Next(1, 9);
+        Console.Write(randomArray[i] + " ");
+    }
+}
+int amount(int[] randomArray)
+{
+    int sum = 0;
+    int i = 0;
+    while (i < randomArray.Length)
+    {
+        sum = sum + randomArray[i];
+        i = i + 2;
+    }
+    return sum;
+}
+array(a);
+Console.Write($"Cумма чисел на нечётных позициях: { amount(randomArray)}");
+
+__________________________________________ 
+
+
+*/ 
+
+
+
+
+
+
+
+
+
