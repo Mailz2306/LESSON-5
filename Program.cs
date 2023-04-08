@@ -74,8 +74,39 @@ Console.Write($"Cумма чисел на нечётных позициях: { a
 __________________________________________ 
 
 Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
-*/ 
+*/
 
+Console.Write("Задайте размер массива: ");
+int a = int.Parse(Console.ReadLine());
+double[] randomArray = new double[a];
+
+void array(int a)
+{
+    Random rand = new Random();
+    for (int i = 0; i < a; i++)
+    {
+        randomArray[i] = rand.NextDouble();
+        Console.Write($"{ randomArray[i]:F2} ");
+    }
+}
+
+double difference(double[] randomArray)
+{
+    double min = randomArray[0];
+    double max = randomArray[0];
+    int i = 1;
+    while (i < randomArray.Length)
+    {
+        if (max < randomArray[i])
+            max = randomArray[i];
+        if (min > randomArray[i])
+            min = randomArray[i];
+        i = i + 1;
+    }
+    return max - min;
+}
+array(a);
+Console.Write($"\nРазница между max и min элементов массива: { difference(randomArray):F2}");
 
 
 
